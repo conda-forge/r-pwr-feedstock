@@ -1,5 +1,4 @@
 {% set version = '1.2-2' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +9,13 @@ package:
 source:
   fn: pwr_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/pwr_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/pwr/pwr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/pwr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/pwr/pwr_{{ version }}.tar.gz
   sha256: 550f021c2ff675ebdcd08116d01ea2073164f289f541ffc7dde7984c033aaf64
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -23,14 +23,15 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('pwr')"  # [not win]
+    - $R -e "library('pwr')"           # [not win]
     - "\"%R%\" -e \"library('pwr')\""  # [win]
 
 about:
@@ -48,3 +49,4 @@ extra:
     - daler
     - jdblischak
     - cbrueffer
+    - dbast
