@@ -39,7 +39,7 @@ test:
 
 about:
   home: https://github.com/heliosdrm/pwr
-  license: GPL-3
+  license: GPL-3.0-or-later
   summary: Power analysis functions along the lines of Cohen (1988).
   license_family: GPL3
   license_file:
