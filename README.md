@@ -1,11 +1,11 @@
-About r-pwr
-===========
+About r-pwr-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-pwr-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/heliosdrm/pwr
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-pwr-feedstock/blob/main/LICENSE.txt)
 
 Summary: Power analysis functions along the lines of Cohen (1988).
 
